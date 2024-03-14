@@ -3,6 +3,7 @@ import cv2 as cv
 
 # to reduce the intensity level
 def intensityLevel(image, levels):
+    # factor to scale down intensity levels
     factor = 256 // levels
     reduced_image = (image // factor) * factor
     return reduced_image

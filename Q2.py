@@ -4,6 +4,7 @@ import numpy as np
 
 # To perform simple spatial average
 def spatialAverage(image,size):
+    # define kernel for averaging
     kernel = np.ones((size, size), dtype=np.float32) / (size * size)
     averaged_image = cv.filter2D(image, -1, kernel)
     return averaged_image

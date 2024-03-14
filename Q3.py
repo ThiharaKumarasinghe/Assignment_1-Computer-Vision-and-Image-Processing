@@ -4,7 +4,10 @@ import numpy as np
 
 # To rotate image with given angle
 def rotateImage(image, angle):
+    # define the center
     center = tuple(np.array(image.shape[1::-1]) / 2)
+
+    # get rotate
     rotation_matrix = cv.getRotationMatrix2D(center, angle, 1.0)
     rotated_image = cv.warpAffine(image, rotation_matrix, image.shape[1::-1], flags=cv.INTER_LINEAR)
     return rotated_image
